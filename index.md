@@ -32,10 +32,7 @@ Do check out the **[Research page][3]** and the
 **[Software page][4]** for more details.
 
 Currently I am looking at possible applications
-of [Reinforcement Learning][2] to robotics. Despite the recent surge
-in popularity of Reinforcement Learning, there has yet been any
-convincing proof showing that these techniques are competitive for
-robotic tasks with stringent safety requirements.
+of [Reinforcement Learning][2] to robotics.
 
 
 
