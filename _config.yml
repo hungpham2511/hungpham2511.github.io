@@ -5,5 +5,8 @@ author: Hung Pham
 github_username: hungpham2511
 description: My research page
 
+markdown: kramdown
+permalink: pretty
+
 sass:
     sass_dir: _sass
