@@ -12,10 +12,9 @@ layout: default
 	Hung Pham (Phạm Tiến Hùng)
       </h2>
       <ul style="list-style-type:none">
-	<li>PhD student, Nanyang Technological University, Singapore</li>
-	<li>Contact: hungpham2511@gmail.com </li>
+	  <li>PhD student, Nanyang Technological University, Singapore</li>
+	  <li>Contact: hungpham2511@gmail.com </li>
       </ul>
-
     </td>
   </tr>
 </table>
