@@ -7,7 +7,7 @@ title: Researchs
 # Preprints
 
 - **A New Approach to Time-Optimal Path Parameterization based on Reachability Analysis,**\\
-  *Hung Pham* and Quang-Cuong Pham. 2017.\\
+  *Hung Pham* and Quang-Cuong Pham. 2017. \\
   [[Paper (arXiv)][1]]
 
 - **Time-Optimal Path Tracking: Online Scaling with Guarantees**\\
@@ -17,14 +17,14 @@ title: Researchs
 - **Departure and Conflict Management in Multi-Robot Path Coordination**\\
   Puttichai Lertkultanon, Yang Jingyi, *Hung Pham*, Quang-Cuong Pham. 2017.
 
-- **Robotic manipulation of a rotating chain**\\
-  *Hung Pham* and Quang-Cuong Pham. 2016.\\
-  [[Paper (arXiv)][4]]
-
-
 # Publications
 
 ## 2017
+
+- **Robotic manipulation of a rotating chain**\\
+  *Hung Pham* and Quang-Cuong Pham, in IEEE Transactions on Robotics, 2017.\\
+  [[Paper (arXiv)][4]]
+
 - **On the Structure of the Time-Optimal Path Parameterization Problem
   with Third-Order Constraints**\\
   *Hung Pham* and Quang-Cuong Pham, in ICRA[^1] 2017.\\

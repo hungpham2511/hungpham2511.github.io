@@ -13,7 +13,6 @@ layout: default
       </h2>
       <ul style="list-style-type:none">
 	  <li>PhD student, Nanyang Technological University, Singapore</li>
-	  <li>Contact: hungpham2511@gmail.com </li>
       </ul>
     </td>
   </tr>
