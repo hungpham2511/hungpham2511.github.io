@@ -20,19 +20,19 @@ layout: default
 
 Hello there!
 
-I am a second year phD candidate at Nanyang Technological University,
-Singapore studying under [Dr. Quang-Cuong Pham][1].
+My name is *Hung Pham*. I am currently pursuing a phD degree at Nanyang
+Technological University (Singapore). My supervisor is
+[Dr. Quang-Cuong Pham][1].
 
-My research interests lie in motion planning and control for
-robots. Mostly robotic manipulators, but sometime I do get to play
-with the fancy humanoids. I investigate algorithms that can plan
-dynamically feasible motions for robots and also control strategies
-that allow stable executions.  Do check out the **[Research page][3]**
-and the **[Software page][4]** for more details.
+My research interests lie in motion planning and control for robotic
+manipulators. I investigate algorithms that can plan dynamically
+feasible motions for robots and also control strategies that allow
+stable executions.  
 
-Currently I am looking at possible applications of [Reinforcement
-Learning][2] and more generally Machine Learning to robotics.
+Do check out the **[Research page][3]** and the **[Software page][4]**
+for more details.
 
+Thank you.
 
 
 [1]: http://www.ntu.edu.sg/home/cuong/
