@@ -31,8 +31,8 @@ title: Researchs
 [[Paper (arXiv)][3], [IEEE Xplore][3a]]
 
 ## 2016
-- **Robotic 3D-Printing for Building and Construction**\\
-*Hung Pham*, Jian Hui Lim, and Quang-Cuong Pham, in Proceedings of the 2nd
+- *Robotic 3D-Printing for Building and Construction*\\
+**Hung Pham**, Jian Hui Lim, and Quang-Cuong Pham, in Proceedings of the 2nd
 International Conference on Progress in Additive Manufacturing (Pro-AM
 2016).
 
