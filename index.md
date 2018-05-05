@@ -8,12 +8,6 @@ layout: default
       <img src="{{ site.url }}/assets/chick.jpg" alt="Profile Picture" style="width:204px;height:204;">
     </td>
     <td valign="top" width="70%">
-      <h2>
-	Hung Pham (Phạm Tiến Hùng)
-      </h2>
-      <ul style="list-style-type:none">
-	  <li>PhD student, Nanyang Technological University, Singapore</li>
-      </ul>
     </td>
   </tr>
 </table>
@@ -21,18 +15,28 @@ layout: default
 Hello there!
 
 My name is *Hung Pham*. I am currently pursuing a phD degree at Nanyang
-Technological University (Singapore). My supervisor is
+Technological University in Singapore. My supervisor is
 [Dr. Quang-Cuong Pham][1].
 
 My research interests lie in motion planning and control for robotic
 manipulators. I investigate algorithms that can plan dynamically
 feasible motions for robots and also control strategies that allow
-stable executions.  
+stable executions. 
 
-Do check out the **[Research page][3]** and the **[Software page][4]**
-for more details.
+I spent a great deal of time recently working on
+[toppra](https://github.com/hungpham2511/toppra) -- a library for path
+parameterizations.  [toppra](https://github.com/hungpham2511/toppra)
+implements a very fast and robust parametrization algorithm which 
+results from my research.
 
-Thank you.
+
+Please check out the **[Research page][3]** and the **[Software
+page][4]** for more details. If you have any queries, just send me an
+email. I will be glad to answer.
+
+Thank you!
+
+Hung
 
 
 [1]: http://www.ntu.edu.sg/home/cuong/
