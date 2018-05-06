@@ -13,7 +13,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Hung Pham's Homepage"
+title                    : "Hung's home page"
 title_separator          : "-"
 name                     : "Hung Pham"
 description              : "An amazing website."
@@ -97,7 +97,7 @@ analytics:
 author:
   name             : "Hung Pham"
   avatar           : "/assets/chick.jpg"
-  bio              : "I am Hung Pham, a researcher in robotic motion planning and control."
+  bio              : "I am a PhD student studying robotic motion planning and control."
   location         : "Singapore"
   email            : "hungpham2511@gmail.com"
   uri              :

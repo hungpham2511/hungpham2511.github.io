@@ -17,9 +17,8 @@ stable executions.
 I spent a great deal of time recently working on
 [toppra](https://github.com/hungpham2511/toppra) -- a library for path
 parameterizations.  [toppra](https://github.com/hungpham2511/toppra)
-implements a very fast and robust parametrization algorithm which
-I developed [here (arXiv paper)][5]
-
+implements a very fast and robust parametrization algorithm which I
+developed [here (arXiv paper)][5]
 
 
 Thank you!
