@@ -97,18 +97,18 @@ analytics:
 author:
   name             : "Hung Pham"
   avatar           : "/assets/chick.jpg"
-  bio              : "I am an amazing person."
+  bio              : "I am Hung Pham, a researcher in robotic motion planning and control."
   location         : "Singapore"
   email            : "hungpham2511@gmail.com"
   uri              :
-  home             : # null (default), "absolute or relative url to link to author home"
+  home             : # null (default), "absolute or relative url 
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : https://github.com/hungpham2511
   gitlab           :
   google_plus      :
   keybase          :

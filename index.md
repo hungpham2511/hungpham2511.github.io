@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 author_profile: true
 ---
 
@@ -19,11 +19,6 @@ I spent a great deal of time recently working on
 parameterizations.  [toppra](https://github.com/hungpham2511/toppra)
 implements a very fast and robust parametrization algorithm which 
 results from my research.
-
-
-Please check out the **[Research page][3]** and the **[Software
-page][4]** for more details. If you have any queries, just send me an
-email. I will be glad to answer.
 
 Thank you!
 
