@@ -1,16 +1,7 @@
 ---
-layout: default
+layout: posts
+author_profile: true
 ---
-
-<table id="profile">
-  <tr>
-    <td valign="top" width="30%" align="right">
-      <img src="{{ site.url }}/assets/chick.jpg" alt="Profile Picture" style="width:204px;height:204;">
-    </td>
-    <td valign="top" width="70%">
-    </td>
-  </tr>
-</table>
 
 Hello there!
 

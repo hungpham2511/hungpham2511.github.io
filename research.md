@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Researchs
+title: Publications
 ---
 
 ## Journal publications
