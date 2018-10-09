@@ -1,6 +1,4 @@
-theme: minimal-mistakes-jekyll
-
-
+remote_theme: "mmistakes/minimal-mistakes"
 
 email: hungpham2511@gmail.com
 
