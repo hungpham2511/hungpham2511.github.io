@@ -1,4 +1,5 @@
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
+
 
 
 email: hungpham2511@gmail.com
@@ -16,7 +17,7 @@ locale                   : "en-US"
 title                    : "Hung's home page"
 title_separator          : "-"
 name                     : "Hung Pham"
-description              : "An amazing website."
+description              : "Hung's home page"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -99,7 +100,7 @@ author:
   avatar           : "/assets/chick.jpg"
   bio              : "I am a PhD student studying robotic motion planning and control."
   location         : "Singapore"
-  email            : "hungpham2511@gmail.com"
+  email            : "hungpham2511[arc]gmail[dot]com"
   uri              :
   home             : # null (default), "absolute or relative url 
   bitbucket        :
