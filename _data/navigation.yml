@@ -2,9 +2,5 @@
 main:
   # - title: "Quick-Start Guide"
     # url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "toppra"
-    url: https://github.com/hungpham2511/toppra
-  - title: "publications"
-    url: /research
-  - title: "CV"
-    url: https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/cv_hungpham.pdf
+  - title: "about me"
+    url: /about
