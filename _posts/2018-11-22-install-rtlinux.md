@@ -1,10 +1,11 @@
 ---
 title:  "HOWTO: TODO Install RT Linux Kernel"
 date:   2018-11-22 23:24:01 +0800
-categories: os
-tags: abc
+categories: setup
+tags: os realtime
 layout: single
 classes: wide
+published: false
 ---
 
 I work with robots everyday. 
@@ -42,6 +43,11 @@ The following steps are adapted from this extremely useful
 StackOverFlow
 [answer](https://stackoverflow.com/questions/51669724/install-rt-linux-patch-for-ubuntu).
 
+After installing Kernel 4.19 blah blah, I was not able to start Ubuntu
+with an error message that says "Not suitable memory disk". 
+
+Try with 4.15 now. Both of my computers use 4.15 and they work
+alright.
 
 # Readings
 
