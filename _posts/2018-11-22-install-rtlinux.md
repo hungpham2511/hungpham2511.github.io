@@ -27,16 +27,18 @@ To avoid this issue, one needs a Real-Time Operating System
 - does not support the software ecosystem for robotics (ROS,
   OpenRAVE).
 
+# Achieving Real-Time capability with Linux
+
 Fortunately, there are free alternatives. Real-Time Linux is one such
 alternative. In this post I will briefly capture steps I have taken to
 achieve Real-Time capability with Linux.
-
-# Achieving Real-Time with Linux: Overview
 
 There is one thing that needs to be clear: there is no such thing as a
 Real-Time Linux distribution.  Rather, one can achieve Real-Time
 capability by running a Fully Preemptible Linux Kernel instead of the
 generic Kernel.  Fortunately, it is quite simple to do so.
+
+# Compiling a Real-Time patched Kernel
 
 First, choose a RT patch from this
 [mirror](https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/). I
