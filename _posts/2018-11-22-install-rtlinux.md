@@ -1,8 +1,8 @@
 ---
-title:  "HOWTO: TODO Install RT Linux Kernel"
-date:   2018-11-22 23:24:01 +0800
+title:  "HOWTO: Install Real-Time Linux Kernel"
+date:   2018-11-24 24:00:00 +0800
 categories: setup
-tags: os realtime HOWTO
+tags: os realtime HOWTO linux ubuntu
 layout: single
 published: true
 ---
