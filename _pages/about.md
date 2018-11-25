@@ -6,26 +6,29 @@ permalink: /about/
 
 Hello there!
 
-My name is *Hung Pham*. I am currently pursuing a phD degree at
-Nanyang Technological University in Singapore, under the supervision
-of [Dr. Quang-Cuong Pham][1].
+My name is *Hung Pham*. I am currently pursuing a PhD in Robotics at
+Nanyang Technological University, Singapore, under the supervision of
+[Dr. Quang-Cuong Pham][1].
 
-My research interests lie in motion planning and control for robotic
-manipulators. I investigate algorithms that can plan dynamically
-feasible motions for robots and also control strategies that allow
-stable executions. 
+My research interests lie in motion planning and control for robots. I
+investigate algorithms that can plan dynamically feasible motions for
+robots and also control strategies that allow optimal executions.
 
 I spent a great deal of time recently working on
-[toppra](https://github.com/hungpham2511/toppra) -- a library for path
-parameterizations.  [toppra](https://github.com/hungpham2511/toppra)
-implements a very fast and robust parametrization algorithm which I
-developed [here (arXiv paper)][5]
+[toppra](https://github.com/hungpham2511/toppra) -- a library for
+planning **fast** motion for industrial robots. The algorithm can
+account for dynamic constraints such as joint torques, friction force
+or suction force from suction cup. See [this
+video](https://www.youtube.com/watch?v=b9H-zOYWLbY) for a
+demonstration of a robot picking objects using suction cup at the
+*fastest possible speed*. The relevant papers can be found [here][5]
+and [here](https://arxiv.org/abs/1809.03151).
 
-
-And if you are interested: 
-- [a list of publications](/research), 
-- [my CV](https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/cv_hungpham.pdf).
-
+Here are:
+- [a list of my publications](/research);
+- [github profile](https://github.com/hungpham2511);
+- [google scholar profile](https://scholar.google.com/citations?user=dszBAKsAAAAJ&hl=en);
+- [CV](https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/cv_hungpham.pdf).
 
 Thank you and have a nice day!
 
