@@ -38,7 +38,7 @@ Real-Time Linux distribution.  Rather, one can achieve Real-Time
 capability by running a Fully Preemptible Linux Kernel instead of the
 generic Kernel.  Fortunately, it is quite simple to do so.
 
-# Compiling a Real-Time patched Kernel
+# Compiling a Fully Preemptible Linux Kernel (Real-Time patched)
 
 First, choose a RT patch from this
 [mirror](https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/). I
