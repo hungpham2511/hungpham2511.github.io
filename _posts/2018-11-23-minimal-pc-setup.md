@@ -17,3 +17,5 @@ My requirements for a good dotfiles management system is:
 - allow fast/light setup;
 - should also install dependencies;
 
+The objective can be 
+
