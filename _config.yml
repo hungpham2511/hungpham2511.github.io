@@ -97,7 +97,7 @@ analytics:
 author:
   name             : "Hung Pham"
   avatar           : "/assets/chick.jpg"
-  bio              : "I am a PhD student studying robotic motion planning and control."
+  bio              : "I am a PhD student in Robotics."
   location         : "Singapore"
   email            : "hungpham2511[arc]gmail[dot]com"
   uri              :
@@ -114,7 +114,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "hung-pham-80912333" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "hung-pham-80912333" 
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
