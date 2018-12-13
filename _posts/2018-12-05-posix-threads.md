@@ -20,7 +20,7 @@ and print `N` "Hello world!" to the screen. The sequence of controls
 is relatively simple:
 - define a new integer variable;
 - get a value from user input, and assign it to the integer variable;
-- loop `N` times and print out the sentence.
+- loop `N` times and print out the sentence ach time.
 
 The "multiple strands" are then interleaving sequences operating on
 the same memory space, or the same set of variables. For instance, one
@@ -31,70 +31,101 @@ variable and print to the screen.
 
 # Synchronizing multiple threads
 
-In another word, how to make multiple threads play nice with each
-other? Alternatively, what can happen if there are multiple threads in
-a single process and how can we address them?
+The question of synchronization can be stated informally as to how to
+make multiple threads work nicely with each other? Alternatively, what
+can happen if there are multiple threads in a single process and how
+can we address these issues?
 
-## Problem number 1: Common resource
+## Problem number 1: Conflicts in accessing a common resource
 
-A central problem programmers have to deal with while working with
-multiple threads is the simple fact that there are variables that are
-accessible by all threads. For examples, global variables can be
-accessed by all threads. Then, if both threads access a same variable
-at the same time, the actual outcome is undefined. A very undesirable
-situation.
+One issue with multi-threaded programs is handling the conflict
+between different threads in accessing a common resource. In another
+word, there are variables that are accessible by all threads, and if
+two threads attempt to change the variables' values at the same time,
+the end behavior is undefined. This is undesirable.
 
-The unversally accepted solution for this problem is actually quite
-straightforward. Suppose now you have a set of variables that might be
-accessed by several threads. Near this set, there is a switch. (Yes, a
-hypothetical switch!). This switch is initially on. Now, we will make
-the following rule:
-- any thread that wants to access--read, write--the set of variables
-  must wait until the switch is on, then attempt to turn it off;
-- after successfully turning the switch off, go in a edit the values
-  of the variables;
+The universally accepted solution for this problem is actually quite
+straightforward. And yes it is mutex, if you are wondering. But it is
+important to understand, not what is a mutex (it actually is a simple
+integer-valued variable with atomic operations), but how to *think*
+about it.
+
+Let's be more specific.  Suppose now you have a set of variables that
+might be accessed by several threads. Near this set, there is a
+switch. (Yes, a hypothetical switch!). This switch is initially
+on. Now, we will make the following rule:
+- any thread that wants to read or change the values of any variable
+  in this set of variables must wait until the switch is on;
+- if the switch is on, turn it off, then do your stuffs on the
+  variable;
 - when the editing is finished, turn on the switch and continue.
 
-These simple rules will allow a multi-threaded process to access
-common resources without any conflict. Despite its simplicity, this is
-the universally accepted solution.
+If the switching mechanism can be made such that in step 2, "check if
+it is on, then turn it off" is *atomic*.  That i,s if there are
+multiple threads attempt to run this atomic instruction at the same
+time, it will always happen sequentially. Then whenever a thread
+manages to turn off the switch, it can freely access the variable
+without worrying about undefined behaviors!
 
-## Problem number 2: Synchronizing sequence
+Notice that here the switch needs not be associated with the set of
+variable. Rather, the threads must be designed such that they respect
+the switching rule. Whenever a thread wants to access a common
+resource, it should make sure to check the switch before editing.
 
-A second problem in a multi-threading process is in making sure that
+
+Now, the switch is basically a mutex. Turning on the switch equals
+lock the mutex, and so on.
+
+*A common question:* if a thread lock a mutex, can another thread
+unlock it?
+
+*Answer*: The answer is: Yes, but you shouldn't do it. Let's return to
+the switch analogy. Suppose a thread has just turned on the switch and
+is doing its editing. Clearly, another thread can just turn off the
+switch, then turn on again and do its editing. Better yet, it does not
+even need to care about the switch at all: just go in and edit. Now,
+while turning off the switch is possible technically, it is a serious
+breach of the switch-rule, making the whole switching strategy fails
+defeating the purpose of the synchronization strategy in the first
+place.
+
+## Problem number 2: Synchronizing sequence of computations
+
+A second problem in a multi-threaded process is in making sure that
 the thread are processed in order. As an example, consider a simple
-computation graph
+computational graph:
 
 ```
-A ---> B ---> C
-
+A ---> B1 ---> C
+  \         /
+   \-> B2 -/
 ```
 
-Suppose we have a very difficult computation. First, the main thread
-receives an input from a text file. Then, it does some initial
-computation and sends the result to two threads (thread 1 and thread
-2). After both threads finished, another thread (thread 3) takes the
-results from thread 1 and thread 2 and do some touching up.
+Suppose we have a very difficult computation. First, the main thread A
+receives an input from a text file. Then, it computes something and
+sends the result to two threads (thread B1 and thread B2). After both
+threads finished, another thread (thread C) takes the results from
+thread B1 and thread B2 and do some touching up.
 
-Without a kind of synchronization, this computation can be very error
-prone. Suppose now thread 1 has finished, but thread 2 has not,
-without any form of synchronization, thread 3 will just take whatever
-computational results from the output of thread 1 and 2. 
+Synchronization is required between the computations.
 
-Rules:
+To achive synchronization, a possible strategy is as follows:
+
 - A do her computation, and finish it;
-- A waits for B to come over and take the result;
-- B tells A: "hey, I got it, you are done with this batch";
+- A waits for B1 and B2 to come over and take the result;
+- B1 tells A: "hey, I got it, you are done with this batch";
+- B2 tells A: "hey, I got it, you are done with this batch";
 - A starts working on a new computation.
 
-Step 2 and step 3 are fundamental to synchronizing different threads.
+- B1 and B2 starts computing stuffs.
+- When they are done, they let C know; only when C has confirmations
+  from both B1 and B2 it starts its computation;
+- After C1 takes the results, B1 and B2 return to A to get things to
+  work on.
+  
+This intuitive strategy can be achieved with semaphores.
 
-# Semaphore
-
-
-# Mutex
-
-# Some Questions and their Answers
+# Questions and Answers
 
 1. If I have two threads that share the same variable, one thread only
    read the variable value and does not write, do I need thread
