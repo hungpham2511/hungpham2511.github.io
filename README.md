@@ -23,3 +23,11 @@ MathJax.Hub.Config({
 ``` shell
 bundle exec jekyll serve
 ```
+
+# To convert ipython notebook to posts
+
+``` shell
+cd ~\_ipynb
+python convert-hung.py ipython-notebook.ipynb
+```
+
