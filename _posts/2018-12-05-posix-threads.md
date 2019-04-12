@@ -1,17 +1,16 @@
 ---
-title:  "Threads in C/C++"
+title:  "Intuition on Multi-Threaded programming"
 date:   2018-11-04 24:00:00 +0800
 categories: programming
 tags: C realtime
 layout: single
-published: false
+published: true
 ---
 
 # What is a thread?
 
 According to [Beginning Linux Programming](), "Multiple strands of
-execution in a single program are called threads". What does this even
-mean?
+execution in a single program are called threads".
 
 A strand of execution in a single program can be thought of a sequence
 of controls that the program operate on its memory, or variable. Think
@@ -91,9 +90,9 @@ place.
 
 ## Problem number 2: Synchronizing sequence of computations
 
-A second problem in a multi-threaded process is in making sure that
-the thread are processed in order. As an example, consider a simple
-computational graph:
+A second problem in multi-threading is making sure that the threads
+process data in order. As an example, consider a simple computational
+graph:
 
 ```
 A ---> B1 ---> C
@@ -101,17 +100,18 @@ A ---> B1 ---> C
    \-> B2 -/
 ```
 
-Suppose we have a very difficult computation. First, the main thread A
-receives an input from a text file. Then, it computes something and
-sends the result to two threads (thread B1 and thread B2). After both
-threads finished, another thread (thread C) takes the results from
-thread B1 and thread B2 and do some touching up.
+Suppose that we have a very complex computation that involes several
+steps. First, the main thread A receives an input from users.  It then
+processes the input and sends the result to two threads (thread B1 and
+thread B2). After both threads have finished, another thread (thread
+C) takes the results from thread B1 and thread B2 and do some touching
+up.
 
-Synchronization is required between the computations.
+Clearly synchronization is required between the computations.
 
 To achive synchronization, a possible strategy is as follows:
 
-- A do her computation, and finish it;
+- A does her computation, and finishes it;
 - A waits for B1 and B2 to come over and take the result;
 - B1 tells A: "hey, I got it, you are done with this batch";
 - B2 tells A: "hey, I got it, you are done with this batch";
@@ -123,7 +123,7 @@ To achive synchronization, a possible strategy is as follows:
 - After C1 takes the results, B1 and B2 return to A to get things to
   work on.
   
-This intuitive strategy can be achieved with semaphores.
+This strategy is precisely what can be achieved with semaphores.
 
 # Questions and Answers
 
