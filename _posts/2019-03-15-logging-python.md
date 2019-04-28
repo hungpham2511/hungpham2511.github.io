@@ -1,6 +1,6 @@
 ---
 title:  "Logging in Python"
-date:   2018-03-15 +0800
+date:   2019-03-15
 categories: programming
 tags: ros logging
 layout: single

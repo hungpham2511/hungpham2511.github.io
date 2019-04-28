@@ -1,6 +1,6 @@
 ---
 title:  "Intuition on Multi-Threaded programming"
-date:   2018-11-04 24:00:00 +0800
+date:   2018-12-05 
 categories: programming
 tags: C realtime
 layout: single

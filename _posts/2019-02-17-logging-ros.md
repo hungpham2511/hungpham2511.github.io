@@ -1,6 +1,6 @@
 ---
 title:  "Logging in ROS: roscpp and rospy"
-date:   2018-02-17 +0800
+date:   2019-02-17
 categories: ros
 tags: ros logging
 layout: single
