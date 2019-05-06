@@ -37,3 +37,40 @@ gnome-keyring-daemon &
 
 exec awesome
 ```
+
+# Creating a .desktop entry
+
+Modern display managers can choose between different desktop
+environment. Notice that the little button when you sign in that
+allows you to choose between `gnome`, `kde` or `awesome`. That's it!
+
+Each environment is defined by a *.desktop file in
+`/usr/share/desktop`. See for example my entry:
+
+```
+[Desktop Entry]
+Name=awesome
+Comment=Highly configurable framework window manager
+TryExec=awesome
+Exec=awesome
+Type=Application
+Icon=/usr/share/pixmaps/awesome.xpm
+Keywords=Window manager
+```
+
+# Starting a single application in a Xsession
+
+It is possible to load only a single application in a X session. Just
+change the `Exec` field. For example, to start only google chrome, we
+can do:
+
+```
+[Desktop Entry]
+Name=Chrome
+Comment=Only start Google Chrome.
+Exec=google-chrome
+TryExec=google-chrome
+Icon=
+Type=Application
+DesktopNames=slack
+```
