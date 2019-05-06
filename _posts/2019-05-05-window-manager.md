@@ -58,6 +58,8 @@ Icon=/usr/share/pixmaps/awesome.xpm
 Keywords=Window manager
 ```
 
+A very good reference: https://wiki.ubuntu.com/CustomXSession
+
 # Starting a single application in a Xsession
 
 It is possible to load only a single application in a X session. Just
