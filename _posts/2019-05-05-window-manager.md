@@ -1,32 +1,46 @@
 ---
-title:  "Window manager, display manager and what?" 
+title:  "Setup window managers" 
 date:   2019-5-5
 tags: os
 layout: single
 published: true
 ---
 
-
-`X` is the graphical server running on a linux machine. `X` does not
-gives you the graphical user interface directly, but provides the
-necessary interface to do that.
-
+[`X`](https://en.wikipedia.org/wiki/X_Window_System) is the graphical
+server running on a linux machine. `X` does not gives you the
+graphical user interface directly, but provides the necessary
+interface to do that.
 
 *Display managers* provide the log in screen. There are many different
-diplay managers. A quick search gives: `gdm3`, `lightdm`, ...
+diplay managers. The two most popular display managers on the Ubuntu
+Linux distribution is `gdm3` and `lightdm`.
 
-*Window managers* provide the look and feel of the machine. The one I
-use is *Awesomewm*.
+On the other hand, *Window managers* provide the look and feel of the
+OS. Here, a window refers to the GUI of an application such as `emacs`
+or `google-chrom`. A *window manager* manages these windows by
+providing methods for arranging, hiding and displaying them. The
+window manager I use is [*awesomewm*](https://awesomewm.org).
+
+When you start a Ubuntu machine, you will first be greeted with the
+display manager. This is the screen that ask for your user name and
+password. At this screen you can choose an existing X session
+configuration and start the corresponding window manager.
 
 You can freely change between display manager, window manager on a
-linux box. The key takeaway is that you need to modify the script
-`.xsession` to load the window manager you want, as well as other
-programs. My current `.xsession` file look like this:
+linux box. In fact, you probaly should. I notice a marked improve in
+productivity after switching to `awesomewm` from the default
+[`gnome`](https://www.gnome.org/) window manager. In addition you can
+choose applications to initialize at the beginning of the X session or
+perform some setup. 
+
+The simplest way to change to a new window manager and starting some
+programs during initialization is to create a `.xsession` scripts. My
+current `.xsession` file look like this:
 
 ``` shell
 #!/usr/bin/env bash
 
-setxkbmap -option ctrl:nocaps  # Map control
+setxkbmap -option ctrl:nocaps  # Map Caps Lock to control key
 
 ibus-daemon &
 nm-applet &
@@ -38,27 +52,30 @@ gnome-keyring-daemon &
 exec awesome
 ```
 
-# Creating a .desktop entry
+This file is quite straightforward. First I map the Caps Lock key to
+another Control key. The next 5 lines start useful programs as
+daemons. Finally the window manager is started.
 
-Modern display managers can choose between different desktop
-environment. Notice that the little button when you sign in that
-allows you to choose between `gnome`, `kde` or `awesome`. That's it!
+Next we need to be able to select this new configuration somehow. This
+is done by creating a .desktop entry.  Modern display managers can
+choose between different desktop environment. Notice that the little
+button when you sign in that allows you to choose between `gnome`,
+`kde` or `awesome`. That's it!
 
-Each environment is defined by a *.desktop file in
-`/usr/share/desktop`. See for example my entry:
-
+Create a new file name `custom.desktop` in `/usr/share/xsessions` with the following lines:
 ```
 [Desktop Entry]
-Name=awesome
-Comment=Highly configurable framework window manager
-TryExec=awesome
-Exec=awesome
+Name=custom
+Comment=Hung's a custom X session 
+Exec=/etc/X11/Xsession
+TryExec=/etc/X11/Xsession
 Type=Application
 Icon=/usr/share/pixmaps/awesome.xpm
 Keywords=Window manager
 ```
 
-A very good reference: https://wiki.ubuntu.com/CustomXSession
+You are now all set. Log out (and probably restart the Linux box) and
+select the `custom` window manager at the log in screen.
 
 # Starting a single application in a Xsession
 
