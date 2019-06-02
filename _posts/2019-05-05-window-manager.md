@@ -8,12 +8,12 @@ published: true
 This is a short note on setting up a Desktop Environment.
 
 [`X`](https://en.wikipedia.org/wiki/X_Window_System) is the graphical
-server running on a linux machine. `X` does not gives you the
+server running on a Linux machine. `X` does not gives you the
 graphical user interface directly, but provides the necessary
 interface to do that.
 
 *Display managers* provide the log in screen. There are many different
-diplay managers. The two most popular display managers on the Ubuntu
+display managers. The two most popular display managers on the Ubuntu
 Linux distribution is `gdm3` and `lightdm`.
 
 On the other hand, *Window managers* provide the look and feel of the
@@ -28,7 +28,7 @@ password. At this screen you can choose an existing X session
 configuration and start the corresponding window manager.
 
 You can freely change between display manager, window manager on a
-linux box. In fact, you probaly should. I notice a marked improve in
+Linux box. In fact, you probably should. I notice a marked improve in
 productivity after switching to `awesomewm` from the default
 [`gnome`](https://www.gnome.org/) window manager. In addition you can
 choose applications to initialize at the beginning of the X session or
@@ -62,7 +62,7 @@ is done by creating a .desktop entry.  Modern display managers can
 choose between different desktop environment. Notice that the little
 button when you sign in that allows you to choose between `gnome`,
 `kde` or a custom desktop environment of your choosing. To create a
-new entry that starts the desktop enviroment we defined in the
+new entry that starts the desktop environment we defined in the
 `.xsession` script, create a new file name `custom.desktop` in
 `/usr/share/xsessions` with the following lines. You will probably
 need to use root permission.
@@ -106,3 +106,13 @@ Icon=
 Type=Application
 DesktopNames=slack
 ```
+
+However, most applications are not designed for this use-case. Hence,
+do expect to do extra work to get everything working
+perfectly. There are some alternatives:
+
+- Start a minimal Window Manager such as awesomewm or openbox with all
+bar, etc tripped off.
+
+- Configure the application Kiosk-style
+  ([link](https://tutorials.ubuntu.com/tutorial/electron-kiosk#0))
