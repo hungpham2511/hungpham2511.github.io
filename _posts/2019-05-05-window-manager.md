@@ -1,10 +1,11 @@
 ---
-title:  "Setup window managers" 
+title:  "Setup a custom Desktop Environment for Linux." 
 date:   2019-5-5
 tags: os
 layout: single
 published: true
 ---
+This is a short note on setting up a Desktop Environment.
 
 [`X`](https://en.wikipedia.org/wiki/X_Window_System) is the graphical
 server running on a linux machine. `X` does not gives you the
@@ -60,9 +61,12 @@ Next we need to be able to select this new configuration somehow. This
 is done by creating a .desktop entry.  Modern display managers can
 choose between different desktop environment. Notice that the little
 button when you sign in that allows you to choose between `gnome`,
-`kde` or `awesome`. That's it!
+`kde` or a custom desktop environment of your choosing. To create a
+new entry that starts the desktop enviroment we defined in the
+`.xsession` script, create a new file name `custom.desktop` in
+`/usr/share/xsessions` with the following lines. You will probably
+need to use root permission.
 
-Create a new file name `custom.desktop` in `/usr/share/xsessions` with the following lines:
 ```
 [Desktop Entry]
 Name=custom
@@ -74,8 +78,17 @@ Icon=/usr/share/pixmaps/awesome.xpm
 Keywords=Window manager
 ```
 
-You are now all set. Log out (and probably restart the Linux box) and
-select the `custom` window manager at the log in screen.
+Note that the file `Name` is the name of the Desktop entry that will
+be shown in the selection panel at the display manager.  `Exec` and
+`TryExec` contains the executable to run that actually start the
+desktop environment. Here by calling the Xsession command, we start
+with the default script `~/.xsession`. More details regarding the
+`/etc/X11/Xsession` script can be found
+[here](http://manpages.ubuntu.com/manpages/xenial/man5/Xsession.5.html).
+
+You are now all set. Log out (and probably restart the Linux box). You
+will now see a new window manager selection called `custom`. Select it
+and enjoy.
 
 # Starting a single application in a Xsession
 

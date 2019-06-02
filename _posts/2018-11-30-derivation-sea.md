@@ -7,26 +7,19 @@ layout: single
 published: true
 ---
 
-In this note, I derive the Equation of Motion for a 1-dimensional
-Serial Elastic Actuator (SEA). 
+This note shows how I derive the Equation of Motion (EoM) for a
+1-dimensional Serial Elastic Actuator (SEA).  The main goal is not
+about the EoM, but rather how can one use a computer algebra system
+(CAS) to derive equation of motion very easily.
 
-You might wonder what is SEA, and why would I care about them?
-
-A SEA is a kind of actuator that has a relatively soft spring attached
-to it. The main use of SEA is to reduce impact between the motor with
-the environment. It allows the engineer to use very high gain in the
-motor's controller, and thus allows high precision when needed.
-
-It is interesting to note that there are two applications in robotics
-that SEA are indispensable, but are often known under a different
-name. These are the Remote Compliance Center in robotic assembly and
+A SEA is a kind of actuator--robot joint--that has a relatively soft
+spring attached to it, with the goal of reducing impact between the
+motor with the environment. It allows the engineer to use very high
+gain in the motor's controller, and thus allows high precision when
+needed.  It is interesting to note that there are two applications in
+robotics that SEA are indispensable, but are often known under a
+different name: the Remote Compliance Center in robotic assembly and
 the spring-at-the-ankle in humanoids.
-
-I have two objectives in writing this note:
-- for my own reference, in the future;
-- introduce how can one use a computer algebra system (CAS) to derive
-  equation of motion very easily; of course, this is also for my own
-  reference in the future.
   
 # The 1D Serial Elastic Actuator model
 
@@ -35,12 +28,11 @@ as is shown in the hand-drawn figure below.
 
 ![](/assets/2018-11-sea-model.jpg)
 
-The symbols' meanings are respectively:
+The symbols are respectively:
 - $$f_1$$: force exerted on the motor by the spring;
 - $$f_2$$: *external* force exerted on the mass;
 - $$x_1, x_2$$: position of the motor and the mass;
 - $$u$$: position command 
-
 Additionally, we will use $$k$$ for the stiffness of the spring, $$m$$
 for the mass and $$v_1, v_2$$ for the velocities of the motor and the
 mass.
