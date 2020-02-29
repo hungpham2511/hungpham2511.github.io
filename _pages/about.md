@@ -6,15 +6,17 @@ permalink: /about/
 
 Hello there!
 
-My name is *Hung Pham*. I am currently pursuing a PhD in Robotics at
-Nanyang Technological University, Singapore, under the supervision of
-[Dr. Quang-Cuong Pham][1].
+My name is *Hung Pham*.  ~~I am currently pursuing a PhD in Robotics
+at Nanyang Technological University, Singapore, under the supervision
+of [Dr. Quang-Cuong Pham][1]~~. I am developing cool robots for
+industrial automation at [Eureka
+Robotics](https://www.therobotreport.com/archimedes-robot-eureka-robotics-human-like-grip/).
 
-My research interests lie in motion planning and control for robots. I
+My interests lie in motion planning and control for robots. I
 investigate algorithms that can plan dynamically feasible motions for
 robots and also control strategies that allow optimal executions.
 
-I spent a great deal of time recently working on
+I used to spend a great deal of time recently working on
 [toppra](https://github.com/hungpham2511/toppra) -- a library for
 planning **fast** motion for industrial robots. The algorithm can
 account for dynamic constraints such as joint torques, friction force
@@ -29,11 +31,6 @@ Here are:
 - [github profile](https://github.com/hungpham2511);
 - [google scholar profile](https://scholar.google.com/citations?user=dszBAKsAAAAJ&hl=en);
 - [CV](https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/cv_hungpham.pdf).
-
-Thank you and have a nice day!
-
-Hung
-
 
 [1]: http://www.ntu.edu.sg/home/cuong/
 [2]: https://en.wikipedia.org/wiki/Reinforcement_learning
