@@ -1,6 +1,6 @@
-blog posts
+# Hung's blog
 
-# To write math equations
+# Write math equations
 
 Put the below code snippet in the respective post. There should be
 another more elegant way, but I am good with this approach now.
@@ -18,13 +18,21 @@ MathJax.Hub.Config({
 
 ```
 
-# To build and run site
+# Building on local environment
 
+Install bundler. See https://bundler.io/
+
+Install packages necessary to run the blog.
+``` shell
+bundle install
+```
+
+Serve the site locally
 ``` shell
 bundle exec jekyll serve
 ```
 
-# To convert ipython notebook to posts
+# Converting ipython notebook to posts
 
 ``` shell
 cd ~\_ipynb
