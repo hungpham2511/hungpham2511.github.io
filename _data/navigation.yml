@@ -1,4 +1,9 @@
 # main links
 main:
+  - title: "posts (by categories)"
+    url: /categories
+  - title: "research"
+    url: /research
   - title: "about"
     url: /about
+
