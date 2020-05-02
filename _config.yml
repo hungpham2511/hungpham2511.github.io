@@ -1,13 +1,11 @@
-# theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
+# remote_theme: "mmistakes/minimal-mistakes"
 
 email: hungpham2511@gmail.com
 
 github_username: hungpham2511
 
 markdown: kramdown
-permalink: pretty
-
 
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 

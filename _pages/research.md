@@ -4,40 +4,49 @@ author_profile: true
 permalink: /research
 ---
 
-## Preprint
-1. *Critically fast pick-and-place with suction cups,* \\
-   **Hung Pham** and Quang-Cuong Pham. \\
-   [[paper (arXiv)][5], [code (github)][5a], [video][5b]]
-
-
 ## Journal publications
-1. *A New Approach to Time-Optimal Path Parameterization based on Reachability Analysis,* \\
+1. *Convex Controller Synthesis for Contact,* \\
+  **Hung Pham** and Quang-Cuong Pham, in _IEEE Robotics and Automation Letters_, 2020. Also presented at ICRA 2020. \\
+   [[paper (arXiv)][cvx-ar]]
+
+2. *A New Approach to Time-Optimal Path Parameterization based on Reachability Analysis,* \\
   **Hung Pham** and Quang-Cuong Pham, in _IEEE Transactions on Robotics_, 2018. \\
   [[paper (arXiv)][1], [IEEE Xplore][1a]]
   
-2. *Robotic manipulation of a rotating chain*\\
+3. *Robotic manipulation of a rotating chain*\\
   **Hung Pham** and Quang-Cuong Pham, in IEEE Transactions on Robotics, 2017.\\
   [[paper (arXiv)][4], [IEEE Xplore][4a]]
 
-3. *Large-scale 3D printing by a team of mobile robots.* \\
+4. *Large-scale 3D printing by a team of mobile robots.* \\
     X. Zhang, M. Li, J.-H. Lim, Y. Weng, D. Tay, **Hung Pham**, Q.-C. Pham, in Automation in Construction, vol. 95, pp. 98–106, 2018. \\
 	[[online][6a], [Video][6]]
 
 
 ## Conference publications
-1. *Time-Optimal Path Tracking via Reachability Analysis*\\
+1. *Siamese Convolutional Neural Network for Sub-millimeter-accurate
+   Camera Pose Estimation and Visual Servoing,*  \\
+   Cunjun Yu, Zhongang Cai, **Hung Pham** and Quang Cuong Pham. Presented at IROS 2019 \\
+   [[paper (arXiv)][servo-ar], [paper (IEEE)][servo-ieee]]
+   
+
+1. *Critically fast pick-and-place with suction cups,* \\
+   **Hung Pham** and Quang-Cuong Pham. Presented at ICRA 2019.\\
+   [[paper (arXiv)][5], [code (github)][5a], [video][5b]]
+
+
+2. *Time-Optimal Path Tracking via Reachability Analysis*\\
   **Hung Pham** and Quang-Cuong Pham, presented at ICRA 2018.\\
   [[paper (arXiv)][2]]
 
-2. *Departure and Conflict Management in Multi-Robot Path Coordination*\\
+3. *Departure and Conflict Management in Multi-Robot Path Coordination*\\
   Puttichai Lertkultanon, Yang Jingyi, **Hung Pham**, Quang-Cuong Pham, presented at ICRA 2018.
 
-3. *On the Structure of the Time-Optimal Path Parameterization Problem
+4. *On the Structure of the Time-Optimal Path Parameterization Problem
   with Third-Order Constraints*\\
   **Hung Pham** and Quang-Cuong Pham, in ICRA[^1] 2017.\\
   [[paper (arXiv)][3], [IEEE Xplore][3a]]
 
-4. *Robotic 3D-Printing for Building and Construction*\\
+5. *Robotic 3D-Printing for Building and Construction*\\
   **Hung Pham**, Jian Hui Lim, and Quang-Cuong Pham, in Proceedings of the
   2nd International Conference on Progress in Additive Manufacturing
   (Pro-AM 2016).
@@ -56,3 +65,8 @@ permalink: /research
 [6a]: https://www.sciencedirect.com/science/article/pii/S0926580518304011
 
 [^1]: The International Conference on Robotics and Automation
+[cvx-ar]: https://arxiv.org/abs/1909.04313
+[cvx-ieee]: https://arxiv.org/abs/1909.04313
+
+[servo-ar]: https://arxiv.org/abs/1903.04713
+[servo-ieee]: https://ieeexplore.ieee.org/document/8967925
