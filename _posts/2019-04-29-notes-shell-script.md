@@ -3,7 +3,7 @@ title:  "Some notes on shell scripts commands"
 date:   2019-4-28 
 tags: programming
 layout: single
-published: true
+published: false
 ---
 
 
