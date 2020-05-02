@@ -1,47 +1,20 @@
 ---
 title:  "HOWTO: Install Real-Time Linux Kernel"
-date:   2018-11-24 24:00:00 +0800
+date:   2020-5-1 24:00:00 +0800
 categories: setup
 tags: os realtime HOWTO linux ubuntu
 layout: single
 published: true
 ---
 
-In my work, I write computer programs that listen to signals from
-sensors, cameras; compute stuffs; and then send motion commands to the
-robot controller. Everything happen very quickly, especially the
-commanding part which should occur exactly every 8 milliseconds.
+In this post I briefly recall the steps I have taken to install a
+**Fully Preemptible Linux Kernel**, which allows processes to run with
+Real-Time priority. It's important to remark that this a necessary
+condition and is insufficient. Some other tricks are needed. I will
+explain what I have learnt in a future post.
 
-This needs for *exactness* requires the program/process sending motion
-commands to be very punctual. Unfortunately, in a common Operating
-System (OS) like generic Ubuntu/Linux, a program/process is often
-disrupt by other processes. These processes can be from the user or
-the OS itself. This situation causes undesirable delays in the
-critical real-time process.
 
-To avoid this issue, one needs a Operating System with real-time
-capability. A OS that allows certain tasks to have higher priority and
-thus can be ran uninterrupted. 
-
-A simple google search leads me to many publicly available
-RTOS(s). Unfortunately:
-- some are not free (QNX, vxwork);
-- does not support the software ecosystem for robotics (ROS,
-OpenRAVE).  Fortunately it is possible to add the real-time capability
-to Linux-based OS(s) by using a configured kernel.
-
-# Achieving Real-Time capability with Linux
-
-Fortunately, there are free alternatives. Real-Time Linux is one such
-alternative. In this post I will briefly capture steps I have taken to
-achieve Real-Time capability with Linux.
-
-There is one thing that needs to be clear: there is no such thing as a
-Real-Time Linux distribution.  Rather, one can achieve Real-Time
-capability by running a Fully Preemptible Linux Kernel instead of the
-generic Kernel.  Fortunately, it is quite simple to do so.
-
-# Compiling a Fully Preemptible Linux Kernel (Real-Time patched)
+## Compiling a Fully Preemptible Linux Kernel
 
 First, choose a RT patch from this
 [mirror](https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/). I
@@ -105,7 +78,7 @@ shifted from **Processor type and feature** to **General
 setup**. Thanks Iain!
 
 
-# Readings
+## Readings
 
 Some useful reads I came across while working on this:
 

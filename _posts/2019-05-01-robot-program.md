@@ -3,7 +3,7 @@ title:  "A note on software architecture for robotic applications"
 date:   2019-5-1
 tags: programming
 layout: single
-published: true
+published: false
 ---
 
 This note addresses the question: How should one design the
