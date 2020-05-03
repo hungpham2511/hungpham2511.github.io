@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "blog"
+  - title: "posts"
     url: /categories
   - title: "publications"
     url: /research

@@ -1,17 +1,16 @@
 ---
 layout: single
 author_profile: true
+title: ""
 
 ---
 
-<h1>
-Hello there!
-</h1>
+# Hello there!
 
 My name is *Hung Pham*.  ~~I am currently pursuing a PhD in Robotics
 at Nanyang Technological University, Singapore, under the supervision
-of [Dr. Quang-Cuong Pham][1]~~. I am developing cool robots for
-industrial automation at [Eureka
+of [Dr. Quang-Cuong Pham][1]~~. I am a robotics engineer developing
+cool robots for industrial automation at [Eureka
 Robotics](https://www.therobotreport.com/archimedes-robot-eureka-robotics-human-like-grip/).
 
 My interests lie in motion planning and control for robots. I
