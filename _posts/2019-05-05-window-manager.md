@@ -4,6 +4,7 @@ date:   2019-5-5
 tags: os
 layout: single
 published: true
+category: setup
 ---
 This is a short note on setting up a Desktop Environment.
 

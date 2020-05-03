@@ -4,6 +4,7 @@ date:   2019-4-28
 tags: programming
 layout: single
 published: true
+category: programming
 ---
 
 During my development of

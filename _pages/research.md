@@ -5,7 +5,7 @@ permalink: /research
 ---
 
 ## Journal publications
-1. *Convex Controller Synthesis for Contact,* \\
+1. *[Convex Controller Synthesis for Contact]({% post_url 2020-05-01-ccs %}),* \\
   **Hung Pham** and Quang-Cuong Pham, in _IEEE Robotics and Automation Letters_, 2020. Also presented at ICRA 2020. \\
    [[paper (arXiv)][cvx-ar]]
 
