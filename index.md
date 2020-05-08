@@ -7,10 +7,8 @@ title: ""
 
 # Hello there!
 
-My name is *Hung Pham*.  ~~I am currently pursuing a PhD in Robotics
-at Nanyang Technological University, Singapore, under the supervision
-of [Dr. Quang-Cuong Pham][1]~~. I am a robotics engineer developing
-cool robots for industrial automation at [Eureka
+My name is *Hung Pham*. Currently I am working as a robotics engineer
+developing cool robots for industrial automation at [Eureka
 Robotics](https://www.therobotreport.com/archimedes-robot-eureka-robotics-human-like-grip/).
 
 My interests lie in motion planning and control for robots. I
@@ -30,7 +28,7 @@ and [here](https://arxiv.org/abs/1809.03151).
 # Selected works
 
 Below are some of my favourite projects.  A more complete list of
-works can be found on [google
+works can be found in [publications][3] or [google
 scholar](https://scholar.google.com/citations?user=dszBAKsAAAAJ&hl=en).
 
 {% for post in site.posts %}
