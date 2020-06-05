@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Hung Pham"
-  avatar           : "/assets/chick.jpg"
+  avatar           : "/assets/2020-profile.jpg"
   bio              : "Robotics Engineer at Eureka Robotics. Specialized in developing motion planning and (force) control algorithms for industrial robotics."
   location         : "Singapore"
   email            : "hungpham2511[arc]gmail[dot]com"
@@ -260,8 +260,8 @@ defaults:
       layout: single
       author_profile: false
       read_time: true
-      comments: # true
-      share: true
+      comments:  true
+      share: false
       related: true
       toc: true
   - scope:
