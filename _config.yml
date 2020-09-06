@@ -5,7 +5,7 @@ email: hungpham2511@gmail.com
 
 github_username: hungpham2511
 
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default"
 
 # Site Settings
 locale                   : "en-US"
@@ -13,7 +13,7 @@ title                    : "Hung Pham"
 title_separator          : "-"
 name                     : "Hung Pham"
 description              : "Hung Pham's Homepage"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://hungpham2511.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -93,7 +93,7 @@ analytics:
 author:
   name             : "Hung Pham"
   avatar           : "/assets/2020-profile.jpg"
-  bio              : "Robotics Engineer at Eureka Robotics. Specialized in developing motion planning and (force) control algorithms for industrial robotics."
+  bio              : "Robotics Engineer at Eureka Robotics. Motion planning and (force) control for industrial robotics."
   location         : "Singapore"
   email            : "hungpham2511[arc]gmail[dot]com"
   uri              :
@@ -165,8 +165,7 @@ markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
-incremental: false
-
+incremental: true
 
 # Markdown Processing
 kramdown:
@@ -186,12 +185,11 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: SG 
 
 
 # Plugins (previously gems:)
@@ -257,7 +255,8 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: false
+      classes: wide
+      author_profile: true
       read_time: true
       comments:  true
       share: false
@@ -268,4 +267,4 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: false
+      author_profile: true
