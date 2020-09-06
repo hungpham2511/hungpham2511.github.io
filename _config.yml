@@ -5,8 +5,6 @@ email: hungpham2511@gmail.com
 
 github_username: hungpham2511
 
-markdown: kramdown
-
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -172,7 +170,7 @@ incremental: false
 
 # Markdown Processing
 kramdown:
-  input: GFM
+  # input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -180,6 +178,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  math_engine: nil
 
 
 # Sass/SCSS

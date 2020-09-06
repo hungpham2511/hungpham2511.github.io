@@ -26,7 +26,7 @@ demonstration of a robot picking objects using suction cup at the
 and [here](https://arxiv.org/abs/1809.03151).
 
 
-# Selected works
+## Selected works
 
 Below are some of my favourite projects.  A more complete list of
 works can be found in [publications][3] or [google
