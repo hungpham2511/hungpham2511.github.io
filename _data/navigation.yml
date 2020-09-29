@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "posts"
-    url: /categories
-  - title: "publications"
+  - title: "Posts"
+    url: /posts
+  - title: "Publications"
     url: /research
-  - title: "cv"
+  - title: "CV"
     url: https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/2020-Hung-Pham-CV.pdf
 

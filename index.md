@@ -25,6 +25,9 @@ demonstration of a robot picking objects using suction cup at the
 *fastest possible speed*. The relevant papers can be found [here][5]
 and [here](https://arxiv.org/abs/1809.03151).
 
+Some of my notes, which are relatively polished to be made available
+online, can be found [here][6].
+
 
 ## Selected works
 
@@ -49,4 +52,5 @@ scholar](https://scholar.google.com/citations?user=dszBAKsAAAAJ&hl=en).
 [3]: {{site.url}}/research
 [4]: {{site.url}}/software
 [5]: https://arxiv.org/abs/1707.07239
+[6]: {{site.url}}/categories
 

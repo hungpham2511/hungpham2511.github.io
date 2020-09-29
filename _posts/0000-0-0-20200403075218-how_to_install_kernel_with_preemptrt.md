@@ -2,19 +2,49 @@
 title: "Installing Linux Kernels: generic, low-latency or PREEMPT_RT"
 author: ["Hung Pham"]
 date: 2020-09-05
-categories: ["blog"]
+categories: ["real-time", "linux"]
 draft: false
 ---
 
 ## Motivation: Achieving Real-Time (RT) capability {#motivation-achieving-real-time--rt--capability}
 
-In this post I will briefly capture steps I have taken to achieve
-Real-Time capability with Linux.
+To build time-critical programs that requires a high-level of
+responsiveness on Linux, the most important step is to select and
+use the correct Linux kernel. This is the goal of this note.
 
-Remark: There is no such thing as a Real-Time Linux distribution.
-Rather, one can achieve Real-Time capability by running a Fully
-Preemptible Linux Kernel instead of the generic Kernel.
-Fortunately, it is quite simple to do so.
+The [Linux kernel](https://www.kernel.org/) is frequently built and released. The latest
+version of the generic kernel build as I write this note is
+5.9-rc3. Howerver, this kernel is not suitable for RT applications:
+Its scheduler optimizes for total throughput and thus prevent any
+single process from being the **absolute higest priority**. We will
+need either a Fully Preemptible Kernel or at least a low-latency
+one.
+
+
+## Obtaining generic and low-latency kernels {#obtaining-generic-and-low-latency-kernels}
+
+Fully-Preemptible kernels are only used for time-critical
+applications such as device and robot control. If the highest level
+of responsiveness is not required, one can look at mainline generic
+or low-latency kernels at [the kernel archive](https://kernel.ubuntu.com/~kernel-ppa/mainline/?C=N;O=D).  The difference
+between the kernel variants--generic, low-latency and fully
+preemptible--are explained [here](https://unix.stackexchange.com/questions/553980/why-would-anyone-choose-not-use-the-lowlatency-kernel) and [here](https://docs.windriver.com/bundle/Wind%5FRiver%5FLinux%5FKernel%5FConfiguration%5Fand%5FBuild%5FLTS%5F1/page/dva1537990303268.html).
+
+Both generic and low-latency kernels are frequently built and
+released on the kernel archieve. First, find your architecture by
+running `arch`. Note that x86\_64 and amd64 are the same
+architectures.  Second, install pre-compiled kernels. We download
+the required `.deb` files. For example to install the generic 5.8.0
+kernel, download the following files:
+
+```nil
+linux-headers-5.8.0-050800_5.8.0-050800.202008022230_all.deb
+linux-headers-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
+linux-image-unsigned-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
+linux-modules-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
+```
+
+Install these debian files with `dpkg`. The new kernel is now installed.
 
 
 ## Compiling a Fully Preemptible Linux Kernel {#compiling-a-fully-preemptible-linux-kernel}
@@ -85,31 +115,6 @@ sudo make install -j20
 The **Fully Preemptible Kernel (RT)** option seems to have been
 shifted from **Processor type and feature** to **General
 setup**. Thanks Iain!
-
-
-## Obtaining generic and low-latency kernels {#obtaining-generic-and-low-latency-kernels}
-
-Fully-Preemptible kernels are needed for time-critical applications
-such as device and robot control. If the highest level of
-"real-timeness" is not necessary, one can look at mainline generic
-or low-latency kernels at [the kernel archive](https://kernel.ubuntu.com/~kernel-ppa/mainline/?C=N;O=D).  Low-latency versus
-generic kernels are explained [here](https://unix.stackexchange.com/questions/553980/why-would-anyone-choose-not-use-the-lowlatency-kernel) and [here](https://docs.windriver.com/bundle/Wind%5FRiver%5FLinux%5FKernel%5FConfiguration%5Fand%5FBuild%5FLTS%5F1/page/dva1537990303268.html).
-
-To find your architecture, run `arch`. Note that x86\_64 and amd64
-are the same architectures.
-
-To install pre-compiled kernels, download the required .deb
-files. For example to install the generic 5.8.0 kernel, download the
-following files:
-
-```nil
-linux-headers-5.8.0-050800_5.8.0-050800.202008022230_all.deb
-linux-headers-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
-linux-image-unsigned-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
-linux-modules-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
-```
-
-Install these debian files with `dpkg`.
 
 
 ## Configure the kernel {#configure-the-kernel}

@@ -93,7 +93,7 @@ analytics:
 author:
   name             : "Hung Pham"
   avatar           : "/assets/2020-profile.jpg"
-  bio              : "Robotics Engineer at Eureka Robotics. Motion planning and (force) control for industrial robotics."
+  bio              : "Robotics Engineer. Working on motion planning and (force) control for industrial robotics."
   location         : "Singapore"
   email            : "hungpham2511[arc]gmail[dot]com"
   uri              :
@@ -169,7 +169,7 @@ incremental: true
 
 # Markdown Processing
 kramdown:
-  # input: GFM
+  input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -187,7 +187,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 10 # amount of posts to show
+paginate: 10  # amount of posts to show
 paginate_path: /page:num/
 timezone: SG 
 
@@ -226,6 +226,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

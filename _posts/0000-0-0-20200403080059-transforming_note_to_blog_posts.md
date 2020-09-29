@@ -8,17 +8,18 @@ draft: false
 
 ## Why?
 
-I keep a lots of notes containing different ideas, thoughts and
-exploratory pieces; but they are not well maintained. Hence, they are
-not as useful for myself or for others as they can be. I think it would
-be great if these notes can be polished and made available online.
+As part of my daily habit, I keep and write notes that contain ideas,
+thoughts and exploratory pieces. These notes, however, are not well
+maintained and hence they are not as useful for myself or for others as
+they can be. I think it would be great if these notes can be polished
+and made available online.
 
 Currently my [personal site](https://hungpham2511.github.com/) is made
 with [Jekyll](https://jekyllrb.com/docs/posts/), which is a really
-powerful framework for static site and definitely can do things that I
-surely would neve need. Jekyll, however, does not support generating org
-notes to blog posts. I also find implementing this functionality
-non-trivial, and thus decided to even try it out.
+powerful framework for generating static site from markdown documents.
+What is truly useful for me, who uses emacs and org-mode for all of my
+notes, is that one can generate markdown documents from org files very
+easily.
 
 ## Hugo
 
@@ -40,13 +41,16 @@ cd ~/org/publish && hugo serve
 This starts a server publishing the built site locally, with
 auto-refresh and other goodies. Very pleasant to work with.
 
-## Generating blog post from `.org` files {#generating-blog-post-from-dot-org-files}
+Now I have gave Hugo a try. In the end, I couldn't really find a
+configuration that I am happy with. So back to jekyll I am.
+
+## Generating markdown posts from org files
 
 For each org note that is to be published, fill in the front matter as
-shown below. When satisfied with the note, use \`org-export\` (C-c C-e H
+shown below. When satisfied with the note, use `org-export` (C-c C-e H
 h) to generate the markdown post. After doing this, there should be a
-new mardown file in \`publish\content\posts\` with the same name as the
-org file but in hugo markdown format.
+new mardown file exported to the jekyll `_posts` folder with the same
+name as the org file but in markdown format.
 
 ``` org
 #+TITLE: Transforming note to blog posts
@@ -65,6 +69,10 @@ Alternatively, include the setup file:
 #+DATE: 2020-07-31
 #+toc: headlines 2
 ```
+
+I actually use my own fork of ox-hugo to do this generation because I
+actually want it to work with jekyll. See the fork
+[here](https://github.com/hungpham2511/ox-hugo).
 
 ## Handling citations
 
