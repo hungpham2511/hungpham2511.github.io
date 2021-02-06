@@ -1,11 +1,11 @@
 # main links
 main:
-  - title: "About"
-    url: /about
   - title: "Archive"
     url: /archive
   - title: "Publications"
     url: /research
+  - title: "About"
+    url: /about
   - title: "CV"
     url: https://github.com/hungpham2511/hungpham2511.github.io/raw/master/assets/2020-Hung-Pham-CV.pdf
 

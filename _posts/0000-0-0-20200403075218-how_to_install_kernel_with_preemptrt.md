@@ -3,22 +3,20 @@ title: "Installing Linux Kernels: generic, low-latency or PREEMPT_RT"
 author: ["Hung Pham"]
 date: 2020-09-05
 categories: ["real-time", "linux"]
+toc: "t"
 draft: false
 ---
 
-## Motivation: Achieving Real-Time (RT) capability {#motivation-achieving-real-time--rt--capability}
-
 To build time-critical programs that requires a high-level of
-responsiveness on Linux, the most important step is to select and
-use the correct Linux kernel. This is the goal of this note.
+responsiveness on Linux, the most important step is to select and use
+the correct Linux kernel. This is the goal of this note.
 
-The [Linux kernel](https://www.kernel.org/) is frequently built and released. The latest
-version of the generic kernel build as I write this note is
-5.9-rc3. Howerver, this kernel is not suitable for RT applications:
-Its scheduler optimizes for total throughput and thus prevent any
-single process from being the **absolute higest priority**. We will
-need either a Fully Preemptible Kernel or at least a low-latency
-one.
+The [Linux kernel](https://www.kernel.org/) is frequently built and released. The latest version
+of the generic kernel build as I write this note is 5.9-rc3. Howerver,
+this kernel is not suitable for RT applications: Its scheduler
+optimizes for total throughput and thus prevent any single process
+from being the **absolute higest priority**. We will need either a Fully
+Preemptible Kernel or at least a low-latency one.
 
 
 ## Obtaining generic and low-latency kernels {#obtaining-generic-and-low-latency-kernels}

@@ -3,10 +3,9 @@ title: "Notebook-styled python wrangling"
 author: ["Hung Pham"]
 date: 2020-06-21
 categories: ["blog", "hugo"]
+toc: "t"
 draft: false
 ---
-
-## Why not jupyter {#why-not-jupyter}
 
 Using jupyter notebook is great when the task is relatively simple, or
 when the main goal of the notebook is to analyze data **and** present
@@ -63,19 +62,19 @@ looks like a table of content. See `python-occur-definitions` below.
   (interactive)
   (if (get-buffer "*Occur*")
       (save-excursion
-	(set-buffer (get-buffer "*Occur*"))
-	(goto-char (point-min))
-	(toggle-read-only 0)
-	(if (looking-at "^[0-9]+ lines matching \"")
-	    (kill-line 1))
-	(while (re-search-forward "^[ \t]*[0-9]+:" (point-max) t)
-	  (replace-match "")
-	  (forward-line 1))
-	(goto-char (point-min))
-	(while (re-search-forward "^# " (point-max) t)
-	  (replace-match "")
-	  (forward-line 1))
-	(toggle-read-only 1))
+        (set-buffer (get-buffer "*Occur*"))
+        (goto-char (point-min))
+        (toggle-read-only 0)
+        (if (looking-at "^[0-9]+ lines matching \"")
+            (kill-line 1))
+        (while (re-search-forward "^[ \t]*[0-9]+:" (point-max) t)
+          (replace-match "")
+          (forward-line 1))
+        (goto-char (point-min))
+        (while (re-search-forward "^# " (point-max) t)
+          (replace-match "")
+          (forward-line 1))
+        (toggle-read-only 1))
 
     (message "There is no buffer named \"*Occur*\".")))
 
@@ -89,7 +88,7 @@ looks like a table of content. See `python-occur-definitions` below.
   (occur-mode-clean-buffer)
   (let ((window (get-buffer-window "*Occur*")))
     (if window
-	(select-window window)
+        (select-window window)
       (switch-to-buffer "*Occur*"))))
 ```
 

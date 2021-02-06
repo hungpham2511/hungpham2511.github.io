@@ -1,19 +1,10 @@
 ---
-layout: single
 author_profile: false
-title: ""
-permalink: /archive/
+layout: page
+title: Archive
 ---
-# Archive
 
-{% for tag in site.categories %}
-  <h3>{{ tag[0] }}</h3>
-  <ul>
-    {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+## By date
 
 {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'"  %}
@@ -29,3 +20,15 @@ permalink: /archive/
 {% endfor %}
 
 {% endfor %}
+
+## By tags
+
+{% for tag in site.categories %}
+  <h3>{{ tag[0] }}</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
