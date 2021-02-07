@@ -88,7 +88,7 @@ plt.savefig('gain-force-compare.png')
 plt.show()
 ```
 
-<a id="org9c56047"></a>
+<a id="orgeb354f2"></a>
 
 {{< figure src="/ox-hugo/gain-force-compare.png" caption="Figure 1: Maximum reaction force when moving at 1mm/s at different linear gain" >}}
 
