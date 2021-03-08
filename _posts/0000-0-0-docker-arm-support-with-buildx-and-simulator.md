@@ -6,11 +6,11 @@ toc: "t"
 draft: false
 ---
 
-Recently in my work at Eureka Robotics, we need to build Docker images
-for devices running on `arm` architecture. Fortunately, this is
-possible using the new build engine `BuildKit` that the folks at
-Docker has been developing in the last few years. (I believe [this
-GitHub issue](https://github.com/moby/moby/issues/34227) is the starting point of this effort).
+Recently at Eureka Robotics, we need to build Docker images for
+devices running on `arm` architecture. Fortunately, this is possible
+using the new build engine `BuildKit` that the folks at Docker has
+been developing in the last few years. (I believe [this GitHub issue](https://github.com/moby/moby/issues/34227) is
+the starting point of this effort).
 
 While it is possible to work with the `BuildKit` daemon directly, it
 is not the most convenient approach. In fact, Docker's own
@@ -35,22 +35,41 @@ customisation. Perharps this is why building mutli-arch images is not
 possible with this approach.
 
 
-## Building images with buildx {#building-images-with-buildx}
+## Building images with buildx `test` {#building-images-with-buildx-test}
 
 
 ### Buildx overview {#buildx-overview}
 
-`buildx` introduces the concept of _builders_. A builder is
-fundamentally is an isolated build environment that is responsible
-for building images.
+After installation, `buildx` functionality is available via the
+`docker buildx` command group. Many common operations are
+available. For example, the sub-command `du` prints disk usage by
+`buildx`; the sub-command `prune` allows us to prune away unused
+build caches.
 
-A builder uses _a driver_ to manage different build
-configurations. Currently there are two drivers: `docker` and
-`docker-container`. `docker` driver is the default one used by the
-"traditional" docker daemon. `docker-container` driver spins a
-docker container running a `BuildKit` docker image.
+One of the main difference that `buildx` introduces is the concept
+of _builders_. A builder is fundamentally is an isolated build
+environment that is responsible for building images.  Sub-commands
+`ls`, `create`, `inspect`, `rm`, `stop` and `use` are for managing
+builders' life-cycles.
 
-To inspect a builder, use the `buildx inspect` command:
+Core functionalities of a builder instance are implemented by its
+_driver_. Currently there are only two drivers available: `docker`
+and `docker-container`. While both drivers are "docker", they are
+different in the way builds are to be performed by builders.
+
+A builder that uses the `docker` driver build images using the "old
+build" functionality provided by the `docker` binary. Hence, this
+builder shares the same image space as generic `docker` commands
+such as `docker ls`.
+
+the default one used by the "traditional" docker
+daemon. `docker-container` driver spins a docker container running
+a `BuildKit` docker image.
+
+To learn more about what builders are available on your PC, use
+`buildx ls`. To inspect a builder, use the `buildx inspect`
+command. Below we inspect the default builder which uses the
+`docker` driver.
 
 ```shell
 docker buildx inspect default
@@ -88,35 +107,35 @@ docker buildx inspect builder-test
 
 ### Building images with buildx {#building-images-with-buildx}
 
-Using buildx to build image ([main reference](https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/)):
+Using buildx to build image ([main reference](https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/)) is slightly different
+from the usual `docker build` experience. We need to first create
+and use new builder using these commands:
 
--   In this folder <~/projects/docker-multiarch/>, there are a
-    Dockerfile and a buildkitd.toml configuration file.
+```shell
+docker buildx create --name builder-test --config buildkitd.toml
+docker buildx use builder-test
+docker buildx inspect --bootstrap
 
-    Create and use new builder using these command
+# ➜  docker-multiarch docker buildx inspect --bootstrap
+# [+] Building 5.1s (1/1) FINISHED
+#  => [internal] booting buildkit                                                                     5.1s
+#  => => pulling image moby/buildkit:buildx-stable-1                                                  4.1s
+#  => => creating container buildx_buildkit_builder-test0                                             0.9s
+# Name:   builder-test
+# Driver: docker-container
+#
+# Nodes:
+# Name:      builder-test0
+# Endpoint:  unix:///var/run/docker.sock
+# Status:    running
+# Platforms: linux/amd64, linux/arm64, linux/386
+```
 
-    ```shell
-    docker buildx create --name builder-test --config buildkitd.toml
-    docker buildx use builder-test
-    docker buildx inspect --bootstrap
+To start the build, we use:
 
-    # ➜  docker-multiarch docker buildx inspect --bootstrap
-    # [+] Building 5.1s (1/1) FINISHED
-    #  => [internal] booting buildkit                                                                     5.1s
-    #  => => pulling image moby/buildkit:buildx-stable-1                                                  4.1s
-    #  => => creating container buildx_buildkit_builder-test0                                             0.9s
-    # Name:   builder-test
-    # Driver: docker-container
-    #
-    # Nodes:
-    # Name:      builder-test0
-    # Endpoint:  unix:///var/run/docker.sock
-    # Status:    running
-    # Platforms: linux/amd64, linux/arm64, linux/386
-    ```
-
-    This builder can be used to build containers for 3 platforms:
-    `linux/amd64, linux/arm64, linux/386`.
+```shell
+docker buildx build a-dir-with-Dockerfile
+```
 
 
 ### Create new `builder` using configuration file. {#create-new-builder-using-configuration-file-dot}
@@ -163,7 +182,7 @@ developed. This means to know how to use [the go programming
 language]({{< relref "go-programming-language" >}}).
 
 
-## Build docker images for arm using amd {#build-docker-images-for-arm-using-amd}
+## Build docker images for arm via QEMU emulation {#build-docker-images-for-arm-via-qemu-emulation}
 
 Below are the steps I have taken to build docker images for `arm`
 architecture on a `amd` machine.
