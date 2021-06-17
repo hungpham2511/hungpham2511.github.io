@@ -8,18 +8,18 @@ draft: false
 ---
 
 To build time-critical programs that requires a high-level of
-responsiveness on Linux, the most important step is to select and use
-the correct Linux kernel. This is the goal of this note.
+responsiveness on Linux, one important step is to select and use the
+correct Linux kernel. This note recollects my experience doing this.
 
 The [Linux kernel](https://www.kernel.org/) is frequently built and released. The latest version
 of the generic kernel build as I write this note is 5.9-rc3. Howerver,
 this kernel is not suitable for RT applications: Its scheduler
 optimizes for total throughput and thus prevent any single process
-from being the **absolute higest priority**. We will need either a Fully
-Preemptible Kernel or at least a low-latency one.
+from being the **absolute higest priority**. We will need either a
+`Fully Preemptible Kernel` or at least a `low-latency` one.
 
 
-## Obtaining generic and low-latency kernels {#obtaining-generic-and-low-latency-kernels}
+## Generic and low-latency kernels {#generic-and-low-latency-kernels}
 
 Fully-Preemptible kernels are only used for time-critical
 applications such as device and robot control. If the highest level
@@ -45,7 +45,7 @@ linux-modules-5.8.0-050800-generic_5.8.0-050800.202008022230_amd64.deb
 Install these debian files with `dpkg`. The new kernel is now installed.
 
 
-## Compiling a Fully Preemptible Linux Kernel {#compiling-a-fully-preemptible-linux-kernel}
+## Fully Preemptible Linux Kernel {#fully-preemptible-linux-kernel}
 
 Fully-Preemptible Linux kernels are not available as precompiled
 binaries; we need to compile from source.
@@ -115,7 +115,7 @@ shifted from **Processor type and feature** to **General
 setup**. Thanks Iain!
 
 
-## Configure the kernel {#configure-the-kernel}
+### Configure the kernel {#configure-the-kernel}
 
 Now that the kernel is compiled and installed, we need to tell the
 bootloader about it. First, check that the new kernel can be found in
@@ -126,7 +126,7 @@ If you want to set a default kernel at boot or prevent the user from
 selecting a different kernel, you will need to configure the grub
 configuration file.  [Simple configuration](https://www.gnu.org/software/grub/manual/grub/grub.html#Simple-configuration) is the **easiest** way to
 achieve this.  Edit `/etc/default/grub` then rerun `sudo
-  update-grub` to regenerate the configuration. To see documentation
+   update-grub` to regenerate the configuration. To see documentation
 on the entries, use the command below for the documentation.
 
 ```sh
